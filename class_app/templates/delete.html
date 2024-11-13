@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+    <form method="POST" class="w-50 mx-auto">
+        <h1>are you confirm to delete the post?</h1>
+        {% csrf_token %}
+        {{form.as_p}}
+        <button
+            type="submit"
+            class="btn btn-primary"
+        >
+           Yes
+        </button>
+        <a class=" nav-link active btn btn-primary me-2" aria-current="page" href="{% url 'all_post' %}">No</a>
+    </form>
+{% endblock content %}
+    

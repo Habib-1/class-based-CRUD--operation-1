@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row d-wrap gap-2">
+            {% for p in post %}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{p.title}} </h5>
+                  
+                  <p class="card-text"> {{p.description}} </p>
+                  <a href="{% url 'edit_post' p.pk %}" class="card-link btn btn-info">Edit</a>
+                  <a href="{% url 'delete_post' p.pk %}" class="card-link btn btn-danger">Delete</a>
+                </div>
+              </div>
+              {% endfor %}
+        </div>
+    </div>
+    
+{% endblock content %}
+    
